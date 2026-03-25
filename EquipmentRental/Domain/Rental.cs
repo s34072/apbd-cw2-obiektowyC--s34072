@@ -10,9 +10,7 @@ public class Rental
     public DateTime RentalDate { get; }
     public DateTime DueDate { get; }
     public DateTime? ReturnDate { get; private set; } 
-    
-    public bool IsOverdue => !ReturnDate.HasValue && DateTime.Now > DueDate;
-
+    public bool IsOverdue => ReturnDate.HasValue ? ReturnDate.Value > DueDate : DateTime.Now > DueDate;
     public Rental(User user, Equipment equipment, int rentalDays)
     {
         Id = Guid.NewGuid();
