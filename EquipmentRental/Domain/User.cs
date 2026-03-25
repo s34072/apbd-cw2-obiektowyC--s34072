@@ -4,9 +4,7 @@ public abstract class User
 {
     public Guid Id { get; }
     public string FirstName { get; }
-    public string LastName { get; }
-    
-    [cite_start]// Zwraca typ użytkownika
+    public string LastName { get; } // Zwraca typ użytkownika
     public string UserType => GetType().Name;
 
     protected User(string firstName, string lastName)

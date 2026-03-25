@@ -2,11 +2,8 @@ namespace EquipmentRental.Domain;
 
 public abstract class Equipment
 {
-    [cite_start]
     public Guid Id { get; } 
-    [cite_start]
     public string Name { get; } 
-    [cite_start]
     public EquipmentStatus Status { get; private set; } 
 
     protected Equipment(string name)
